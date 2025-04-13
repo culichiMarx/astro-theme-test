@@ -21,7 +21,7 @@ export async function getStaticPaths() {
   moreLocales.forEach((lang: string) => {
     paths.push({
       params: { about: `${lang}/about/` },
-      props: { lang },
+      props: { lang: lang },
     })
   })
 
@@ -31,10 +31,10 @@ export async function getStaticPaths() {
 const { lang } = Astro.props
 
 // Get about page content with different language
-const allAboutEntries = await getCollection('about')
-const aboutEntry = allAboutEntries.find(entry => entry.data.lang === lang)
-  || allAboutEntries.find(entry => entry.data.lang === '')
-const { Content } = aboutEntry ? await render(aboutEntry) : { Content: null }
+const aboutEntry = await getCollection('about', ({ data }) => {
+  return data.lang === lang;
+})
+const { Content } = aboutEntry ? await render(aboutEntry[0]) : { Content: null }
 ---
 
 <Layout>

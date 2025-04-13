@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   moreLocales.forEach((lang: string) => {
     paths.push({
       params: { index: `${lang}/` },
-      props: { lang },
+      props: { lang:lang },
     })
   })
 
@@ -34,7 +34,7 @@ const { lang } = Astro.props
 const pinnedPosts = await getPinnedPosts(lang)
 const postsByYear = await getPostsByYear(lang)
 ---
-<Layout>
+<Layout supportedLangs={moreLocales}>
   <!-- Pinned Posts -->
   {pinnedPosts.length > 0 && (
     <section class="mb-7.5">

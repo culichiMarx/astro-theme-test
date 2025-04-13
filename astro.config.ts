@@ -1,40 +1,38 @@
-import mdx from '@astrojs/mdx'
-import partytown from '@astrojs/partytown'
-import sitemap from '@astrojs/sitemap'
-import compress from 'astro-compress'
-import robotsTxt from 'astro-robots-txt'
-import { defineConfig } from 'astro/config'
-import rehypeExternalLinks from 'rehype-external-links'
-import rehypeKatex from 'rehype-katex'
-import rehypeSlug from 'rehype-slug'
-import remarkMath from 'remark-math'
-import UnoCSS from 'unocss/astro'
-import { themeConfig } from './src/config'
-import { langMap } from './src/i18n/config'
-import { remarkReadingTime } from './src/plugins/remark-reading-time'
+import mdx from "@astrojs/mdx";
+import partytown from "@astrojs/partytown";
+import sitemap from "@astrojs/sitemap";
+import compress from "astro-compress";
+import robotsTxt from "astro-robots-txt";
+import { defineConfig } from "astro/config";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
+import remarkMath from "remark-math";
+import UnoCSS from "unocss/astro";
+import { themeConfig } from "./src/config";
+import { langMap, supportedLangs } from "./src/i18n/config";
+import { remarkReadingTime } from "./src/plugins/remark-reading-time";
 
-const url = themeConfig.site.url
-const locale = themeConfig.global.locale
-const linkPrefetch = themeConfig.preload.linkPrefetch
-const imageDomain = new URL(themeConfig.preload.imageHostURL as string).hostname
+const url = themeConfig.site.url;
+const locale = themeConfig.global.locale;
+const linkPrefetch = themeConfig.preload.linkPrefetch;
+const imageDomain = new URL(themeConfig.preload.imageHostURL as string)
+  .hostname;
 
 export default defineConfig({
   site: url,
-  base: '/',
-  trailingSlash: 'always',
+  base: "/",
+  trailingSlash: "always",
   prefetch: {
     prefetchAll: true,
     defaultStrategy: linkPrefetch,
   },
   image: {
     domains: [imageDomain],
-    remotePatterns: [{ protocol: 'https' }],
+    remotePatterns: [{ protocol: "https" }],
   },
   i18n: {
-    locales: Object.entries(langMap).map(([path, codes]) => ({
-      path,
-      codes: codes as [string, ...string[]],
-    })),
+    locales: supportedLangs,
     defaultLocale: locale,
   },
   integrations: [
@@ -44,7 +42,7 @@ export default defineConfig({
     mdx(),
     partytown({
       config: {
-        forward: ['dataLayer.push'],
+        forward: ["dataLayer.push"],
       },
     }),
     sitemap(),
@@ -52,31 +50,28 @@ export default defineConfig({
     compress(),
   ],
   markdown: {
-    remarkPlugins: [
-      remarkMath,
-      remarkReadingTime,
-    ],
+    remarkPlugins: [remarkMath, remarkReadingTime],
     rehypePlugins: [
       rehypeSlug,
       rehypeKatex,
       [
         rehypeExternalLinks,
         {
-          target: '_blank',
-          rel: ['nofollow', 'noopener', 'noreferrer', 'external'],
-          protocols: ['http', 'https', 'mailto'],
+          target: "_blank",
+          rel: ["nofollow", "noopener", "noreferrer", "external"],
+          protocols: ["http", "https", "mailto"],
         },
       ],
     ],
     shikiConfig: {
       // available themes: https://shiki.style/themes
       themes: {
-        light: 'github-light',
-        dark: 'github-dark',
+        light: "github-light",
+        dark: "github-dark",
       },
     },
   },
   devToolbar: {
     enabled: false,
   },
-})
+});

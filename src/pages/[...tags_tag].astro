@@ -49,10 +49,10 @@ const tagSupportedLangs = await Promise.all(
 )
 
 // Filter to get supported languages
-const supportedLangs = tagSupportedLangs.filter(Boolean) as string[]
+const supportedLangs = [""]
 ---
 
-<Layout supportedLangs={supportedLangs}>
+<Layout>
   <!-- Decorative Line -->
   <div class="uno-decorative-line"></div>
   <!-- Tags List -->
