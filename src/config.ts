@@ -70,67 +70,67 @@ export const themeConfig: ThemeConfig = {
   // GLOBAL SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
   // COMMENT SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
-  //  comment: {
-  //    // enable comment system
-  //    enabled: false, // true, false
-  //    // waline comment system
-  //    // https://waline.js.org/en/
-  //    waline: {
-  //      // server url
-  //      serverURL: "",
-  //      // emoji url
-  //      emoji: [
-  //        "",
-  //        // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji',
-  //        // more emojis: https://waline.js.org/en/guide/features/emoji.html
-  //      ],
-  //      // gif search
-  //      search: false, // true, false
-  //      // image uploader
-  //      // bug: unable to hide image uploader icon
-  //      imageUploader: false, // true, false
-  //    },
-  //  },
+  comment: {
+    // enable comment system
+    enabled: false, // true, false
+    // waline comment system
+    // https://waline.js.org/en/
+    waline: {
+      // server url
+      serverURL: "https://example.com",
+      // emoji url
+      emoji: [
+        "",
+        // 'https://unpkg.com/@waline/emojis@1.2.0/bmoji',
+        // more emojis: https://waline.js.org/en/guide/features/emoji.html
+      ],
+      // gif search
+      search: false, // true, false
+      // image uploader
+      // bug: unable to hide image uploader icon
+      imageUploader: false, // true, false
+    },
+  },
   // COMMENT SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
   // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
-  // seo: {
-  //   // @twitter ID
-  //   twitterID: "",
-  //   // site verification
-  //   verification: {
-  //     // google search console
-  //     // https://search.google.com/search-console
-  //     google: "",
-  //     // bing webmaster tools
-  //     // https://www.bing.com/webmasters
-  //     bing: "",
-  //     // yandex webmaster
-  //     // https://webmaster.yandex.com
-  //     yandex: "",
-  //     // baidu search
-  //     // https://ziyuan.baidu.com
-  //     baidu: "",
-  //   },
-  //   // google analytics
-  //   // https://analytics.google.com
-  //   googleAnalyticsID: "",
-  //   // umami analytics
-  //   // https://cloud.umami.is
-  //   umamiAnalyticsID: "",
-  //   // follow verification
-  //   // https://follow.is/
-  //   follow: {
-  //     // feed ID
-  //     feedID: "",
-  //     // user ID
-  //     userID: "",
-  //   },
-  //   // apiflash access key
-  //   // automatically generate website screenshots for open graph images
-  //   // get your access key at: https://apiflash.com/
-  //   apiflashKey: "",
-  // },
+  seo: {
+    // @twitter ID
+    twitterID: "",
+    // site verification
+    verification: {
+      // google search console
+      // https://search.google.com/search-console
+      google: "",
+      // bing webmaster tools
+      // https://www.bing.com/webmasters
+      bing: "",
+      // yandex webmaster
+      // https://webmaster.yandex.com
+      yandex: "",
+      // baidu search
+      // https://ziyuan.baidu.com
+      baidu: "",
+    },
+    // google analytics
+    // https://analytics.google.com
+    googleAnalyticsID: "",
+    // umami analytics
+    // https://cloud.umami.is
+    umamiAnalyticsID: "",
+    // follow verification
+    // https://follow.is/
+    follow: {
+      // feed ID
+      feedID: "",
+      // user ID
+      userID: "",
+    },
+    // apiflash access key
+    // automatically generate website screenshots for open graph images
+    // get your access key at: https://apiflash.com/
+    apiflashKey: "",
+  },
   // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
   // FOOTER SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
@@ -155,15 +155,15 @@ export const themeConfig: ThemeConfig = {
     // comment server url
     // commentURL: "",
     // // image hosting url
-    // imageHostURL: "",
+    imageHostURL: "https://example.com",
     // // custom google analytics js
     // // for users who route analytics javascript to a customized domain
     // // See https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738
-    // customGoogleAnalyticsJS: "",
-    // // custom umami analytics js
-    // // for users who deploy umami on their own, or route analytics javascript to a customized domain
-    // // see https://github.com/umami-software/umami/discussions/1026
-    // customUmamiAnalyticsJS: "",
+    customGoogleAnalyticsJS: "",
+    // custom umami analytics js
+    // for users who deploy umami on their own, or route analytics javascript to a customized domain
+    // see https://github.com/umami-software/umami/discussions/1026
+    customUmamiAnalyticsJS: "",
   },
   // PRELOAD SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 };

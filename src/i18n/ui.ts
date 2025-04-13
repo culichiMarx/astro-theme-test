@@ -1,6 +1,5 @@
 import { themeConfig } from "@/config";
-const { title, subtitle, description, author, url, favicon, i18nTitle } =
-  themeConfig.site;
+const { title, subtitle, description } = themeConfig.site;
 
 export const ui = {
   en: {
@@ -13,8 +12,8 @@ export const ui = {
     toc: "Table of Contents",
   },
   es: {
-    title: i18nTitle,
-    subtitle: "Reviviendo la belleza tipográfica",
+    title: "La Frontera",
+    subtitle: "Noticias y Analysis revolucionario.",
     description:
       "Retypeset es un tema de blog estático basado en el framework Astro. Inspirado por Typography, Retypeset establece un nuevo estándar visual y reimagina el diseño de todas las páginas, creando una experiencia de lectura similar a la de los libros impresos, reviviendo la belleza de la tipografía. Detalles en cada mirada, elegancia en cada espacio.",
     posts: "Artículos",
