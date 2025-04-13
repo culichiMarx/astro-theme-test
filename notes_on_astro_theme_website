@@ -1,0 +1,44 @@
+Notes on the website:
+
+TODO1:
+When a user uses the side table of contents and clicks on one of the links on it the back button has to cycle through the clicks which were clicked.
+This actually happens regardles of the table of contents clicking on anything will cause a new url to load and therefore the back button will return to the previous url which 
+is usually on the same page rather than on the previous page. 
+
+TODO2:
+language picker stuck on the first language.
+This is actually only happening in some of the pages like the about and the index page but it works correctly on the posts page and on the tags page.
+related to how the posts are being retreived in those two pages I mentioned.
+
+TODO3:
+find what imageHostURL is for and see if we can get rid of it enteriely 
+this is definitely related to some of the SEO stuff that is on the code base which we also need to delete
+right now it is trying to load and check some of the configurations for those modules which causes crashes if they are 
+completely missing.
+
+TODO4:
+As of right now there are no unit tests nor integration tests included on the template so we need to both add a framework for that
+and implement the unit tests.
+
+TODO5:
+contanirize the code base as to make it more portable for development and deployment.
+
+TODO6:
+add infrastructure as code folder which will define the infrastructure for this project 
+
+TODO7:
+create CICD process to deploy the infrastructure automatically.
+
+TODO8:
+when you click on a tag in the tags page it correctly loads up the tag but if you switch languge afterwards 
+you get a not found error. If you switch language before you select a tag the page will load fine 
+ex:
+1. click on tags
+2. switch language
+3. click on tag
+4. switch lang back 
+5. No page found error. 
+  - expected that it will switch lang and find the appropriate lang tags.
+  - 14:46:36 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path 
+`/es/tags/Blog Theme/`. 
+  - this warning might have something to do with the  error. 
