@@ -6,7 +6,7 @@ import { getPinnedPosts, getPostsByYear } from '@/utils/content'
 
 export async function getStaticPaths() {
   type PathItem = {
-    params: { index: string | undefined }
+    params: { index: string }
     props: { lang: string }
   }
 
@@ -14,27 +14,33 @@ export async function getStaticPaths() {
 
   // Default locale
   paths.push({
-    params: { index: undefined },
+    params: { index: "/" },
     props: { lang: defaultLocale },
   })
 
-  // More locales
-  moreLocales.forEach((lang: string) => {
-    paths.push({
-      params: { index: `${lang}/` },
-      props: { lang:lang },
-    })
-  })
 
+
+  // More locales
+  for (const lang of moreLocales) {
+     paths.push({
+       params: { index: `/${lang}/` },
+       props: { lang:lang },
+     })
+   }
+    console.log(JSON.stringify(moreLocales,null,4))
+  console.log("locales")
+  console.log(JSON.stringify(paths,null,4))
   return paths
 }
 
 const { lang } = Astro.props
 
+console.log(lang)
 const pinnedPosts = await getPinnedPosts(lang)
+
 const postsByYear = await getPostsByYear(lang)
 ---
-<Layout supportedLangs={moreLocales}>
+<Layout >
   <!-- Pinned Posts -->
   {pinnedPosts.length > 0 && (
     <section class="mb-7.5">

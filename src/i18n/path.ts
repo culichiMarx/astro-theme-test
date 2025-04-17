@@ -61,7 +61,9 @@ export function buildNextLangPath(currentPath: string, currentLang: string, next
  */
 export function getNextGlobalLangPath(currentPath: string): string {
   const currentLang = getLangFromPath(currentPath)
+  console.log(currentLang)
   const nextLang = getNextGlobalLang(currentLang)
+  console.log(nextLang)
   return buildNextLangPath(currentPath, currentLang, nextLang)
 }
 

@@ -12,6 +12,7 @@ export function getLangFromPath(path: string) {
 // Get the next language code in the global language cycle
 export function getNextGlobalLang(currentLang: string): string {
   // Get index of current language
+  console.log("allLocales:"+allLocales)
   const currentIndex = allLocales.indexOf(currentLang)
   if (currentIndex === -1) {
     return defaultLocale
